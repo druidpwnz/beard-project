@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/beard.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='beard.css') }}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,7 +21,7 @@
           <div class="header__nav-menu">
             <div class="header__logo">
               <a href="#">
-                <img src="/img/Group 11.png" alt="" />
+                <img src="{{ url_for('static', filename='img/Group 11.png') }}" alt="" />
               </a>
             </div>
             <div class="header__burger">
@@ -47,12 +47,12 @@
           <div class="menu__user">
             <div class="user__user">
               <a href="">
-                <img src="/img/Profile 1.svg" alt="" />
+                <img src="{{ url_for('static', filename='img/Profile 1.svg') }}" alt="" />
               </a>
             </div>
             <div class="user__alarm">
               <a href="">
-                <img src="/img/Notification 1.svg" alt="" />
+                <img src="{{ url_for('static', filename='img/Notification 1.svg') }}" alt="" />
               </a>
             </div>
             <div class="user__button">
@@ -82,7 +82,7 @@
                 </div>
               </div>
               <div class="hairstyle__cover">
-                <img src="/img/01.jpeg" alt="" />
+                <img src="{{ url_for('static', filename='img/01.jpeg') }}" alt="" />
               </div>
             </div>
           </div>
@@ -113,14 +113,14 @@
                 </div>
               </div>
               <div class="hairstyle__cover Our__cover">
-                <img src="/img/02.jpeg" alt="" />
+                <img src="{{ url_for('static', filename='img/02.jpeg') }}" alt="" />
               </div>
             </div>
             <div class="decor01 _dec" _dec>
-              <img src="/img/decor/Vector 1.png" alt="" />
+              <img src="{{ url_for('static', filename='img/decor/Vector 1.png') }}" alt="" />
             </div>
             <div class="decor02 _dec">
-              <img src="/img/decor/Vector 2.png" alt="" />
+              <img src="{{ url_for('static', filename='img/decor/Vector 2.png') }}" alt="" />
             </div>
           </div>
         </section>
@@ -138,7 +138,7 @@
               <div class="services__cards">
                 <div class="cards__items">
                   <div class="items__img">
-                    <img src="/img/icons/Group.png" alt="" />
+                    <img src="{{ url_for('static', filename='img/icons/Group.png') }}" alt="" />
                   </div>
                   <div class="items__title">Hair Cut</div>
                   <div class="items__text">
@@ -148,7 +148,7 @@
                 </div>
                 <div class="cards__items">
                   <div class="items__img">
-                    <img src="/img/icons/electric-razor 1.png" alt="" />
+                    <img src="{{ url_for('static', filename='img/icons/electric-razor 1.png') }}" alt="" />
                   </div>
                   <div class="items__title">Beard Cut</div>
                   <div class="items__text">
@@ -158,7 +158,7 @@
                 </div>
                 <div class="cards__items">
                   <div class="items__img">
-                    <img src="/img/icons/cleanser 1.png" alt="" />
+                    <img src="{{ url_for('static', filename='img/icons/cleanser 1.png') }}" alt="" />
                   </div>
                   <div class="items__title">Facial Pack</div>
                   <div class="items__text">
@@ -169,10 +169,10 @@
               </div>
             </div>
             <div class="decor03 _dec">
-              <img src="/img/decor/Vector 3.png" alt="" />
+              <img src="{{ url_for('static', filename='img/decor/Vector 3.png') }}" alt="" />
             </div>
             <div class="decor04 _dec">
-              <img src="/img/decor/Vector 4.png" alt="" />
+              <img src="{{ url_for('static', filename='img/decor/Vector 4.png') }}" alt="" />
             </div>
           </div>
         </section>
@@ -184,22 +184,22 @@
               <div class="gallery__title">Our <span>Gallery</span></div>
               <div class="gallery__gallety">
                 <div class="gallery__img">
-                  <img src="/img/gallery/01.svg" alt="" />
+                  <img src="{{ url_for('static', filename='img/gallery/01.svg') }}" alt="" />
                 </div>
                 <div class="gallery__img">
-                  <img src="/img/gallery/02.svg" alt="" />
+                  <img src="{{ url_for('static', filename='img/gallery/02.svg') }}" alt="" />
                 </div>
                 <div class="gallery__img">
-                  <img src="/img/gallery/03.svg" alt="" />
+                  <img src="{{ url_for('static', filename='img/gallery/03.svg') }}" alt="" />
                 </div>
                 <div class="gallery__img">
-                  <img src="/img/gallery/04.svg" alt="" />
+                  <img src="{{ url_for('static', filename='img/gallery/04.svg') }}" alt="" />
                 </div>
                 <div class="gallery__img">
-                  <img src="/img/gallery/05.svg" alt="" />
+                  <img src="{{ url_for('static', filename='img/gallery/05.svg') }}" alt="" />
                 </div>
                 <div class="gallery__img">
-                  <img src="/img/gallery/06.svg" alt="" />
+                  <img src="{{ url_for('static', filename='img/gallery/06.svg') }}" alt="" />
                 </div>
               </div>
               <div class="gallery__button">
@@ -207,17 +207,17 @@
               </div>
             </div>
             <div class="decor05 _dec">
-              <img src="/img/decor/Vector 5.png" alt="" />
+              <img src="{{ url_for('static', filename='img/decor/Vector 5.png') }}" alt="" />
             </div>
             <div class="decor06 _dec">
-              <img src="/img/decor/Vector 6.png" alt="" />
+              <img src="{{ url_for('static', filename='img/decor/Vector 6.png') }}" alt="" />
             </div>
           </div>
         </section>
       </main>
       <footer class="footer">
         <div class="footer__logo">
-          <img src="/img/Group 11.png" alt="" />
+          <img src="{{ url_for('static', filename='img/Group 11.png') }}" alt="" />
         </div>
         <div class="footer__text">
           It is a long established fact that a reader will be <br />
@@ -226,28 +226,28 @@
         <div class="footer__icons">
           <div class="icons__items">
             <a href="">
-              <img src="img/follows/Vector.png" alt="" />
+              <img src="{{ url_for('static', filename='img/follows/Vector.png') }}" alt="" />
             </a>
           </div>
           <div class="icons__items">
             <a href="">
-              <img src="img/follows/Group.png" alt="" />
+              <img src="{{ url_for('static', filename='img/follows/Group.png') }}" alt="" />
             </a>
           </div>
           <div class="icons__items">
             <a href="">
-              <img src="img/follows/Group (1).png" alt="" />
+              <img src="{{ url_for('static', filename='img/follows/Group (1).png') }}" alt="" />
             </a>
           </div>
         </div>
         <div class="decor07 _dec">
-          <img src="/img/decor/Vector 7.png" alt="" />
+          <img src="{{ url_for('static', filename='img/decor/Vector 7.png') }}" alt="" />
         </div>
         <div class="decor08 _dec">
-          <img src="/img/decor/Vector 8.png" alt="" />
+          <img src="{{ url_for('static', filename='img/decor/Vector 8.png') }}" alt="" />
         </div>
       </footer>
     </div>
-    <script src="/beard.js"></script>
+    <script src="{{ url_for('static', filename='beard.js') }}"></script>
   </body>
 </html>
