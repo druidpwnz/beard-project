@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+        <!-- section02-start -->
+        <section class="section02">
+          <div class="hairstyle Our">
+            <div class="hairstyle__content Our__content _container">
+              <div class="hairstyle__body Our__body">
+                <div class="hairstyle__title Our__title">
+                  Our <span>History</span>
+                </div>
+                <div class="hairstyle__text Our__text">
+                  <p>
+                    It is a long established fact that a reader will be
+                    distracted by the readable content of a page w hen looking
+                    at.
+                  </p>
+                  <p>
+                    It is a long established fact that a reader will be
+                    distracted by the readable content of a page w hen looking
+                    at.
+                  </p>
+                </div>
+              </div>
+              <div class="hairstyle__cover Our__cover">
+                <img src="{{ url_for('static', filename='img/02.jpeg') }}" alt="" />
+              </div>
+            </div>
+            <div class="decor01 _dec" _dec>
+              <img src="{{ url_for('static', filename='img/decor/Vector 1.png') }}" alt="" />
+            </div>
+            <div class="decor02 _dec">
+              <img src="{{ url_for('static', filename='img/decor/Vector 2.png') }}" alt="" />
+            </div>
+          </div>
+        </section>
+        <!-- section02-end -->
+{% endblock %}

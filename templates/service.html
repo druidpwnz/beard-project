@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+        <section class="section03">
+          <div class="services">
+            <div class="services__content _container">
+              <div class="services__about">
+                <div class="about__title">
+                  Services We <br />
+                  <span>Provide</span>
+                </div>
+              </div>
+              <div class="services__cards">
+                <div class="cards__items">
+                  <div class="items__img">
+                    <img src="{{ url_for('static', filename='img/icons/Group.png') }}" alt="" />
+                  </div>
+                  <div class="items__title">Hair Cut</div>
+                  <div class="items__text">
+                    long established fact that a re <br />
+                    acted by the readable content of hen looking at.
+                  </div>
+                </div>
+                <div class="cards__items">
+                  <div class="items__img">
+                    <img src="{{ url_for('static', filename='img/icons/electric-razor 1.png') }}" alt="" />
+                  </div>
+                  <div class="items__title">Beard Cut</div>
+                  <div class="items__text">
+                    long established fact that a re <br />
+                    acted by the readable content of hen looking at.
+                  </div>
+                </div>
+                <div class="cards__items">
+                  <div class="items__img">
+                    <img src="{{ url_for('static', filename='img/icons/cleanser 1.png') }}" alt="" />
+                  </div>
+                  <div class="items__title">Facial Pack</div>
+                  <div class="items__text">
+                    long established fact that a re <br />
+                    acted by the readable content of hen looking at.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="decor03 _dec">
+              <img src="{{ url_for('static', filename='img/decor/Vector 3.png') }}" alt="" />
+            </div>
+            <div class="decor04 _dec">
+              <img src="{{ url_for('static', filename='img/decor/Vector 4.png') }}" alt="" />
+            </div>
+          </div>
+        </section>
+{% endblock %}
+
