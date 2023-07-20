@@ -707,3 +707,43 @@ h6 {
   background-color: #99baed;
   transition: 0.3s;
 }
+/* Custom Form Group Class */
+.form-container {
+  display: flex;
+  flex-direction: column; /* Set the form groups to be in columns */
+  align-items: center;
+  height: 100vh;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column; /* Place the label and input in a column */
+  align-items: flex-start; /* Align items to the left */
+  margin-bottom: 20px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.form-label {
+  font-size: 18px;
+  font-weight: 500;
+  color: #163561;
+  margin-bottom: 8px; /* Add spacing between label and input */
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d5e5ff;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #163561;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #99baed;
+  box-shadow: 0 0 3px #99baed;
+}
+
+
