@@ -1,11 +1,30 @@
-from flask import Flask, render_template
+# TODO generate content for site with chatgpt
+# TODO add flask-login for login into admin page
+# TODO add feedback page and feedback form
+# TODO move models, forms and views to different modules
+
+from flask import Flask, redirect, render_template, url_for
 from flask_wtf import FlaskForm
 from wtforms import StringField, TelField, EmailField, DateTimeLocalField
 from wtforms.validators import DataRequired, Length
+from flask_sqlalchemy import SQLAlchemy
 import os
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = os.urandom(24)
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///beard.sqlite3"
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+
+db = SQLAlchemy(app)
+
+
+# TODO add Services Choice to table and form
+class Appointment(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String)
+    email = db.Column(db.String)
+    phone = db.Column(db.String)
+    convenient_time = db.Column(db.DateTime)
 
 
 class AppointmentForm(FlaskForm):
@@ -47,9 +66,27 @@ def appointment():
         phone = form.phone.data
         convenient_time = form.convenient_time.data
 
-        return f"<h1>Name {name}, Email {email}, Phone {phone}, Convenient time {convenient_time}</h1>"
+        new_appointment = Appointment(
+            name=name, email=email, phone=phone, convenient_time=convenient_time
+        )
+        db.session.add(new_appointment)
+        db.session.commit()
+
+        return redirect(url_for("success_appointment", name=name, time=convenient_time))
 
     return render_template("appointment.html", form=form)
+
+
+@app.route("/success_appointment/<name>/<time>")
+def success_appointment(name, time):
+    return render_template("success_appointment.html", name=name, time=time)
+
+
+@app.route("/admin")
+def admin():
+    appointments = Appointment.query.order_by(Appointment.id.desc()).all()
+
+    return render_template("admin.html", appointments=appointments)
 
 
 if __name__ == "__main__":

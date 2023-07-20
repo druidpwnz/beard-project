@@ -746,4 +746,26 @@ h6 {
   box-shadow: 0 0 3px #99baed;
 }
 
+ .appointments-list {
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto; /* Center the appointments-list div horizontally */
+  }
 
+  .appointments-list table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .appointments-list th,
+  .appointments-list td {
+    padding: 10px;
+    border: 1px solid #d5e5ff;
+    border-radius: 5px;
+    background-color: #f3f8ff;
+    color: #163561;
+  }
+
+  .appointments-list th {
+    font-weight: bold;
+  }

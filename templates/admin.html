@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="appointments-list">
+<div class="about__title">
+  Admin Mode<br />
+  <span>Appointments</span>
+  <br>
+</div>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Convenient Time</th>
+    </tr>
+    {% for appointment in appointments %}
+    <tr>
+      <td>{{ appointment.name }}</td>
+      <td>{{ appointment.email }}</td>
+      <td>{{ appointment.phone }}</td>
+      <td>{{ appointment.convenient_time }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+
+{% endblock %}
