@@ -5,7 +5,7 @@
 
 from flask import Flask, redirect, render_template, url_for
 from flask_wtf import FlaskForm
-from wtforms import StringField, TelField, EmailField, DateTimeLocalField
+from wtforms import StringField, TelField, EmailField, DateTimeLocalField, SelectField
 from wtforms.validators import DataRequired, Length
 from flask_sqlalchemy import SQLAlchemy
 import os
@@ -24,6 +24,7 @@ class Appointment(db.Model):
     name = db.Column(db.String)
     email = db.Column(db.String)
     phone = db.Column(db.String)
+    service_choice = db.Column(db.String)
     convenient_time = db.Column(db.DateTime)
 
 
@@ -31,6 +32,11 @@ class AppointmentForm(FlaskForm):
     name = StringField("Name", validators=[DataRequired(), Length(max=30)])
     email = EmailField("Email", validators=[DataRequired()])
     phone = TelField("Phone", validators=[DataRequired()])
+    service_choice = SelectField(
+        "Service Choice",
+        validators=[DataRequired()],
+        choices=["Hair Cut", "Beard Cut", "Facial Pack"],
+    )
     convenient_time = DateTimeLocalField(
         "Convenient Time", validators=[DataRequired()], format="%Y-%m-%dT%H:%M"
     )
@@ -64,10 +70,15 @@ def appointment():
         name = form.name.data
         email = form.email.data
         phone = form.phone.data
+        service_choice = form.service_choice.data
         convenient_time = form.convenient_time.data
 
         new_appointment = Appointment(
-            name=name, email=email, phone=phone, convenient_time=convenient_time
+            name=name,
+            email=email,
+            phone=phone,
+            service_choice=service_choice,
+            convenient_time=convenient_time,
         )
         db.session.add(new_appointment)
         db.session.commit()

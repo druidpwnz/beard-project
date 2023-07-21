@@ -13,6 +13,7 @@
       <th>Name</th>
       <th>Email</th>
       <th>Phone</th>
+      <th>Service Choice</th>
       <th>Convenient Time</th>
     </tr>
     {% for appointment in appointments %}
@@ -20,6 +21,7 @@
       <td>{{ appointment.name }}</td>
       <td>{{ appointment.email }}</td>
       <td>{{ appointment.phone }}</td>
+      <td>{{ appointment.service_choice }}</td>
       <td>{{ appointment.convenient_time }}</td>
     </tr>
     {% endfor %}
