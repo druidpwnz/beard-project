@@ -1,5 +1,12 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, TelField, EmailField, DateTimeLocalField, SelectField
+from wtforms import (
+    StringField,
+    TelField,
+    EmailField,
+    DateTimeLocalField,
+    SelectField,
+    PasswordField,
+)
 from wtforms.validators import DataRequired, Length
 
 
@@ -15,3 +22,10 @@ class AppointmentForm(FlaskForm):
     convenient_time = DateTimeLocalField(
         "Convenient Time", validators=[DataRequired()], format="%Y-%m-%dT%H:%M"
     )
+
+
+class LoginForm(FlaskForm):
+    username = StringField(
+        "Username", validators=[DataRequired(), Length(min=5, max=20)]
+    )
+    password = PasswordField(validators=[DataRequired(), Length(min=5, max=50)])
