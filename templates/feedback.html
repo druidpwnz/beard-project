@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="feedbacks-list">
+    <div class="about__title">
+      Feed<span>backs</span>
+    </div>
+    <ul>
+      {% for feedback in feedbacks %}
+      <li class="feedbacks-list-item">
+          <strong>Name:</strong> {{ feedback.name }}<br>
+          <strong>Feedback:</strong> {{ feedback.feedback_text }}
+      </li>
+      {% endfor %}
+    </ul>
+    <br>
+    <button class="_btn" onclick="window.location.href='{{ url_for('leave_feedback') }}';">Leave your feedback</button>
+</div>
+
+{% endblock %}
+
+

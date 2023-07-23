@@ -6,6 +6,7 @@ from wtforms import (
     DateTimeLocalField,
     SelectField,
     PasswordField,
+    TextAreaField,
 )
 from wtforms.validators import DataRequired, Length
 
@@ -29,3 +30,8 @@ class LoginForm(FlaskForm):
         "Username", validators=[DataRequired(), Length(min=5, max=20)]
     )
     password = PasswordField(validators=[DataRequired(), Length(min=5, max=50)])
+
+
+class FeedbackForm(FlaskForm):
+    name = StringField("Name", validators=[DataRequired(), Length(max=30)])
+    feedback_text = TextAreaField("Feedback Text", validators=[DataRequired()])

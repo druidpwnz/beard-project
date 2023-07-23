@@ -769,3 +769,61 @@ h6 {
   .appointments-list th {
     font-weight: bold;
   }
+.feedbacks-list {
+    text-align: center;
+    margin-top: 30px;
+    max-width: 800px;
+    margin: 0 auto; /* Center the feedback list horizontally */
+}
+
+.feedbacks-list h2 {
+    font-size: 30px;
+    color: #163561;
+    margin-bottom: 20px;
+}
+
+.feedbacks-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feedbacks-list-item {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #d5e5ff;
+    border-radius: 5px;
+    background-color: #f3f8ff;
+    color: #163561;
+    text-align: left;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.feedbacks-list-item strong {
+    color: #163561;
+}
+
+.feedbacks-list-item::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 10px solid transparent;
+    border-bottom: 10px solid #f3f8ff;
+}
+
+.feedbacks-list-item::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 10px solid transparent;
+    border-top: 10px solid #f3f8ff;
+}
+
+.feedbacks-list-item:last-child {
+    margin-bottom: 0;
+}

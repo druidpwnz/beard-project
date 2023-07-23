@@ -1,8 +1,8 @@
 from flask import redirect, render_template, url_for
 from flask_login import login_required, login_user, logout_user
 from app import app, db, login_manager
-from models import Appointment, User
-from forms import AppointmentForm, LoginForm
+from models import Appointment, User, Feedback
+from forms import AppointmentForm, LoginForm, FeedbackForm
 from werkzeug.security import check_password_hash
 
 login_manager.login_view = "login"
@@ -63,6 +63,31 @@ def appointment():
 @app.route("/success_appointment/<name>/<time>")
 def success_appointment(name, time):
     return render_template("success_appointment.html", name=name, time=time)
+
+
+@app.route("/feedback")
+def feedback():
+    feedbacks = Feedback.query.order_by(Feedback.id.desc()).all()
+
+    return render_template("feedback.html", feedbacks=feedbacks)
+
+
+@app.route("/leave_feedback", methods=["GET", "POST"])
+def leave_feedback():
+    form = FeedbackForm()
+
+    if form.validate_on_submit():
+        name = form.name.data
+        feedback_text = form.feedback_text.data
+
+        feedback = Feedback(name=name, feedback_text=feedback_text)
+
+        db.session.add(feedback)
+        db.session.commit()
+
+        return redirect(url_for("feedback"))
+
+    return render_template("leave_feedback.html", form=form)
 
 
 @app.route("/login", methods=["GET", "POST"])
