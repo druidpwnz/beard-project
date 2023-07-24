@@ -1,37 +1,41 @@
 {% extends "base.html" %}
 
+{% block title %}
+Gallery
+{% endblock %}
+
 {% block content %}
-        <section class="section04">
-          <div class="gallery">
-            <div class="gallery__content _container">
-              <div class="gallery__title">Our <span>Gallery</span></div>
-              <div class="gallery__gallety">
-                <div class="gallery__img">
-                  <img src="{{ url_for('static', filename='img/gallery/01.svg') }}" alt="" />
-                </div>
-                <div class="gallery__img">
-                  <img src="{{ url_for('static', filename='img/gallery/02.svg') }}" alt="" />
-                </div>
-                <div class="gallery__img">
-                  <img src="{{ url_for('static', filename='img/gallery/03.svg') }}" alt="" />
-                </div>
-                <div class="gallery__img">
-                  <img src="{{ url_for('static', filename='img/gallery/04.svg') }}" alt="" />
-                </div>
-                <div class="gallery__img">
-                  <img src="{{ url_for('static', filename='img/gallery/05.svg') }}" alt="" />
-                </div>
-                <div class="gallery__img">
-                  <img src="{{ url_for('static', filename='img/gallery/06.svg') }}" alt="" />
-                </div>
-              </div>
-            </div>
-            <div class="decor05 _dec">
-              <img src="{{ url_for('static', filename='img/decor/Vector 5.png') }}" alt="" />
-            </div>
-            <div class="decor06 _dec">
-              <img src="{{ url_for('static', filename='img/decor/Vector 6.png') }}" alt="" />
-            </div>
-          </div>
-        </section>
+<section class="section04">
+  <div class="gallery">
+    <div class="gallery__content _container">
+      <div class="gallery__title">Our <span>Gallery</span></div>
+      <div class="gallery__gallety">
+        <div class="gallery__img">
+          <img src="{{ url_for('static', filename='img/gallery/01.svg') }}" alt="" />
+        </div>
+        <div class="gallery__img">
+          <img src="{{ url_for('static', filename='img/gallery/02.svg') }}" alt="" />
+        </div>
+        <div class="gallery__img">
+          <img src="{{ url_for('static', filename='img/gallery/03.svg') }}" alt="" />
+        </div>
+        <div class="gallery__img">
+          <img src="{{ url_for('static', filename='img/gallery/04.svg') }}" alt="" />
+        </div>
+        <div class="gallery__img">
+          <img src="{{ url_for('static', filename='img/gallery/05.svg') }}" alt="" />
+        </div>
+        <div class="gallery__img">
+          <img src="{{ url_for('static', filename='img/gallery/06.svg') }}" alt="" />
+        </div>
+      </div>
+    </div>
+    <div class="decor05 _dec">
+      <img src="{{ url_for('static', filename='img/decor/Vector 5.png') }}" alt="" />
+    </div>
+    <div class="decor06 _dec">
+      <img src="{{ url_for('static', filename='img/decor/Vector 6.png') }}" alt="" />
+    </div>
+  </div>
+</section>
 {% endblock %}

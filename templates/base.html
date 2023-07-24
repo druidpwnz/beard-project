@@ -1,95 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='beard.css') }}" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="wrapper">
-      <header class="header">
-        <div class="header__content _container">
-          <div class="header__nav-menu">
-            <div class="header__logo">
-              <a href="{{ url_for('index') }}">
-                <img src="{{ url_for('static', filename='img/Group 11.png') }}" alt="" />
-              </a>
-            </div>
-            <div class="header__burger">
-              <span></span>
-            </div>
-            <nav class="header__menu menu">
-              <ul class="menu__list">
-                <li class="menu__items">
-                  <a href="{{ url_for('index') }}" class="menu__links">Home</a>
-                </li>
-                <li class="menu__items">
-                  <a href="{{ url_for('history') }}" class="menu__links">History</a>
-                </li>
-                <li class="menu__items">
-                  <a href="{{ url_for('service') }}" class="menu__links">Service</a>
-                </li>
-                <li class="menu__items">
-                  <a href="{{ url_for('gallery') }}" class="menu__links">Gallery</a>
-                </li>
-                <li class="menu__items">
-                  <a href="{{ url_for('feedback') }}" class="menu__links">Review</a>
-                </li>
-              </ul>
-            </nav>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    {% block title %}
+    {% endblock %} | Beard
+  </title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='beard.css') }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <div class="header__content _container">
+        <div class="header__nav-menu">
+          <div class="header__logo">
+            <a href="{{ url_for('index') }}">
+              <img src="{{ url_for('static', filename='img/Group 11.png') }}" alt="" />
+            </a>
           </div>
-          <div class="menu__user">
-            <div class="user__button">
-              <button class="user__but _btn" onclick="window.location.href='{{ url_for('appointment') }}';">Appointment</button>
-            </div>
+          <div class="header__burger">
+            <span></span>
+          </div>
+          <nav class="header__menu menu">
+            <ul class="menu__list">
+              <li class="menu__items">
+                <a href="{{ url_for('index') }}" class="menu__links">Home</a>
+              </li>
+              <li class="menu__items">
+                <a href="{{ url_for('history') }}" class="menu__links">History</a>
+              </li>
+              <li class="menu__items">
+                <a href="{{ url_for('service') }}" class="menu__links">Service</a>
+              </li>
+              <li class="menu__items">
+                <a href="{{ url_for('gallery') }}" class="menu__links">Gallery</a>
+              </li>
+              <li class="menu__items">
+                <a href="{{ url_for('feedback') }}" class="menu__links">Review</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="menu__user">
+          <div class="user__button">
+            <button class="user__but _btn"
+              onclick="window.location.href='{{ url_for('appointment') }}';">Appointment</button>
           </div>
         </div>
-      </header>
-      <main class="main">
+      </div>
+    </header>
+    <main class="main">
       {% block content %}
       {% endblock %}
-      </main>
-      <footer class="footer">
-        <div class="footer__logo">
-          <img src="{{ url_for('static', filename='img/Group 11.png') }}" alt="" />
+    </main>
+    <footer class="footer">
+      <div class="footer__logo">
+        <img src="{{ url_for('static', filename='img/Group 11.png') }}" alt="" />
+      </div>
+      <div class="footer__text">
+        Where Style Meets Precision<br />
+        Your Perfect Cut Awaits!
+      </div>
+
+      <div class="footer__icons">
+        <div class="icons__items">
+          <a href="https://www.facebook.com/" target="blank">
+            <img src="{{ url_for('static', filename='img/follows/Vector.png') }}" alt="" />
+          </a>
         </div>
-        <div class="footer__text">
-          It is a long established fact that a reader will be <br />
-          distracted by the readable
+        <div class="icons__items">
+          <a href="https://www.twitter.com/" target="blank">
+            <img src="{{ url_for('static', filename='img/follows/Group.png') }}" alt="" />
+          </a>
         </div>
-        <div class="footer__icons">
-          <div class="icons__items">
-            <a href="https://www.facebook.com/" target="blank">
-              <img src="{{ url_for('static', filename='img/follows/Vector.png') }}" alt="" />
-            </a>
-          </div>
-          <div class="icons__items">
-            <a href="https://www.twitter.com/" target="blank">
-              <img src="{{ url_for('static', filename='img/follows/Group.png') }}" alt="" />
-            </a>
-          </div>
-          <div class="icons__items">
-            <a href="https://www.google.com/" target="blank">
-              <img src="{{ url_for('static', filename='img/follows/Group (1).png') }}" alt="" />
-            </a>
-          </div>
+        <div class="icons__items">
+          <a href="https://www.google.com/" target="blank">
+            <img src="{{ url_for('static', filename='img/follows/Group (1).png') }}" alt="" />
+          </a>
         </div>
-        <div class="decor07 _dec">
-          <img src="{{ url_for('static', filename='img/decor/Vector 7.png') }}" alt="" />
-        </div>
-        <div class="decor08 _dec">
-          <img src="{{ url_for('static', filename='img/decor/Vector 8.png') }}" alt="" />
-        </div>
-      </footer>
-    </div>
-    <script src="{{ url_for('static', filename='beard.js') }}"></script>
-  </body>
+      </div>
+      <div class="decor07 _dec">
+        <img src="{{ url_for('static', filename='img/decor/Vector 7.png') }}" alt="" />
+      </div>
+      <div class="decor08 _dec">
+        <img src="{{ url_for('static', filename='img/decor/Vector 8.png') }}" alt="" />
+      </div>
+      <br>
+      <a href="{{ url_for('admin') }}"><span>For admins</span></a>
+      <br>
+    </footer>
+  </div>
+  <script src="{{ url_for('static', filename='beard.js') }}"></script>
+</body>
+
 </html>

@@ -1,6 +1,3 @@
-# TODO generate content for site with chatgpt
-# TODO add dynamic page title in base html
-
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager

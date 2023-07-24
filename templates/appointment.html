@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block title %}
+Appointment
+{% endblock %}
+
 {% block content %}
 
 <div class="about__title">
@@ -10,31 +14,31 @@
 
 <form method="POST" action="{{ url_for('appointment') }}">
   {{ form.csrf_token }}
-<div class="form-container">
-  <div class="form-group">
-    <label for="username" class="form-label">Name:</label>
-    {{ form.name(class="form-input", placeholder="Enter your name") }}
-  </div>
-  <div class="form-group">
-    <label for="email" class="form-label">Email:</label>
-    {{ form.email(class="form-input", placeholder="Enter your email") }}
-  </div>
-  <div class="form-group">
-    <label for="phone" class="form-label">Phone:</label>
-    {{ form.phone(class="form-input", placeholder="Enter your phone number") }}
-  </div>
+  <div class="form-container">
+    <div class="form-group">
+      <label for="username" class="form-label">Name:</label>
+      {{ form.name(class="form-input", placeholder="Enter your name") }}
+    </div>
+    <div class="form-group">
+      <label for="email" class="form-label">Email:</label>
+      {{ form.email(class="form-input", placeholder="Enter your email") }}
+    </div>
+    <div class="form-group">
+      <label for="phone" class="form-label">Phone:</label>
+      {{ form.phone(class="form-input", placeholder="Enter your phone number") }}
+    </div>
 
-  <div class="form-group">
-    <label for="service_choice" class="form-label">Service Choice:</label>
-    {{ form.service_choice(class="form-input") }}
-  </div>
+    <div class="form-group">
+      <label for="service_choice" class="form-label">Service Choice:</label>
+      {{ form.service_choice(class="form-input") }}
+    </div>
 
-  <div class="form-group">
-    <label for="convenient_time" class="form-label">Convenient time:</label>
-    {{ form.convenient_time(class="form-input") }}
+    <div class="form-group">
+      <label for="convenient_time" class="form-label">Convenient time:</label>
+      {{ form.convenient_time(class="form-input") }}
+    </div>
+    <button type="submit" class="_btn">Submit</button>
   </div>
-  <button type="submit" class="_btn">Submit</button>
-</div>
 
 </form>
 

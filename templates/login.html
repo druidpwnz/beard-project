@@ -1,12 +1,16 @@
 {% extends "base.html" %}
 
+{% block title %}
+Login
+{% endblock %}
+
 {% block content %}
 <div class="about__title">
-  Login to <span>admin</span>
-<br>
-{% if message %}
-{{ message }}
-{% endif %}
+    Login to <span>admin</span>
+    <br>
+    {% if message %}
+    {{ message }}
+    {% endif %}
 </div>
 
 <form method="POST" action="{{ url_for('login') }}">
@@ -24,6 +28,3 @@
     </div>
 </form>
 {% endblock %}
-
-
-

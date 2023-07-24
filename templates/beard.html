@@ -1,23 +1,27 @@
 {% extends "base.html" %}
 
+{% block title %}
+Home
+{% endblock %}
+
 {% block content %}
-        <section class="section01">
-          <div class="hairstyle">
-            <div class="hairstyle__content _container">
-              <div class="hairstyle__body">
-                <div class="hairstyle__title">
-                  <span> Hairstyle</span> Reflects The Personality Inside You
-                </div>
-                <div class="hairstyle__text">
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page w <br />
-                  hen looking at.
-                </div>
-              </div>
-              <div class="hairstyle__cover">
-                <img src="{{ url_for('static', filename='img/01.jpeg') }}" alt="" />
-              </div>
-            </div>
-          </div>
-        </section>
+<section class="section01">
+  <div class="hairstyle">
+    <div class="hairstyle__content _container">
+      <div class="hairstyle__body">
+        <div class="hairstyle__title">
+          <span> Hairstyle</span> Reflects The Personality Inside You
+        </div>
+        <div class="hairstyle__text">
+          Step into a world of timeless elegance and impeccable grooming. Our skilled barbers are here to curate the
+          perfect look that reflects your individuality and style. Whether it's a classic gentleman's cut, a modern
+          fade, or a stylish beard trim, we've got you covered.
+        </div>
+      </div>
+      <div class="hairstyle__cover">
+        <img src="{{ url_for('static', filename='img/01.jpeg') }}" alt="" />
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock %}
